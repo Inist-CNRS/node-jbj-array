@@ -37,7 +37,6 @@ Once the module is declared as used for JBJ, you can use the following actions:
 
 <a id="mapping"></a>
 ### mapping: object
-*module: array*
 
 Replace a value by the matching value in the object.
 
@@ -86,7 +85,6 @@ Can also replace the values of an array with the matching values in the object.
 <a id="mappingvar"></a>
 ### mappingVar: ["input","table"]
 
-*module: array*
 *alias*: combine
 
 Replace the content of the `input` variable according to the content of the `table` variable.
@@ -105,7 +103,6 @@ var output = JBJ.renderSync(stylesheet, input);
 
 <a id="array2object"></a>
 ### array2object: [key, value]
-*module: array*
 
 Convert an array, which items have `key` and `value` properties, to an associative array (or object), which key properties are `key` values and values are `value` values.
 
@@ -149,7 +146,6 @@ var stylesheet = {
 
 <a id="arrays2objects"></a>
 ### arrays2objects: [key, value]
-*module: array*
 
 Convert an array of arrays (of 2 items), to an array of objects, where the first key if `key` and the second `value`). Defailt value of `key`: `_id`, default value of `value`: `value`.
 
@@ -179,7 +175,6 @@ var stylesheet = {
 
 <a id="zip"></a>
 ### zip: ["array1","array2"]
-*module: array*
 
 Join two arrays (which elements have an `_id` and a `value` keys).
 
@@ -199,7 +194,6 @@ var output = JBJ.renderSync(stylesheet);
 
 <a id="coalesce"></a>
 ### coalesce: none
-*module: array*
 
 Get the first non-undefined value
 ```javascript
@@ -213,7 +207,6 @@ Get the first non-undefined value
 <a id="substring"></a>
 ### substring: [offset]|[offset, length]
 
-*module: array*
 *aliases : substr*
 
 ```javascript
@@ -227,7 +220,6 @@ Get the first non-undefined value
 <a id="getproperty"></a>
 <a id="getindex"></a>
 ### getindex: property | index
-*module: array*
 *aliases : getProperty, getproperty, getIndex*
 
 Get a property of an object, or an item of an array.
@@ -248,7 +240,6 @@ var stylesheet = {
 <a id="getpropertyvar"></a>
 <a id="getindexvar"></a>
 ### getindexvar: [ arrayName | objectName , propertyName | indexName ]
-*module: array*
 *aliases : getPropertyVar, getpropertyvar, getIndexVar*
 
 Get a property of an object, or an item of an array, like [getindex](#getindex), but using variables.
