@@ -27,7 +27,7 @@ JBJ.use(require('jbj-array'));
 Use [mocha](https://github.com/visionmedia/mocha) to run the tests.
 
 ```bash
-$ npm install --dev
+$ npm install
 $ npm test
 ```
 
