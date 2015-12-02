@@ -70,7 +70,7 @@
   "getpropertyvar object": {
     "input": {
       "i" : "b",
-      "o" : { "a": 0, "b": 1, "c":2 },
+      "o" : { "a": 0, "b": 1, "c":2 }
     },
     "stylesheet": {
       "getPropertyVar": ["o", "i"]
