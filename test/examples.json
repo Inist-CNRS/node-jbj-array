@@ -1,0 +1,181 @@
+{
+  "mapping": {
+    "input": {
+      "a" : {
+        "b" : {
+          "c" : "value"
+        },
+        "d" : ["C", "B", "A"],
+        "e" : 3
+      }
+    },
+    "stylesheet": {
+      "get" : "a.b.c",
+      "mapping" : {
+        "value" : 1
+      }
+    }
+  },
+  "mapping 2": {
+    "input": 1,
+    "stylesheet": {
+      "mapping" : ["a","b","c"]
+    }
+  },
+  "mapping 3": {
+    "input": [1, 2],
+    "stylesheet": {
+      "mapping" : ["a","b","c"]
+    }
+  },
+  "mapping 4": {
+    "input": ["a", "b"],
+    "stylesheet": {
+      "mapping": {
+        "a": "Aha!",
+        "b": "Baby"
+      }
+    }
+  },
+  "mappingVar": {
+    "input": {
+      "arg": { "a": "Aha!", "b": "Baby"},
+      "input": "a"
+    },
+    "stylesheet": {
+      "mappingVar": ["input","arg"]
+    }
+  },
+  "getindex array": {
+    "input": [ "a", "b", "c"],
+    "stylesheet": {
+      "getindex" : 2
+    }
+  },
+  "getproperty object": {
+    "input": { "a": 0, "b": 1, "c":2 },
+    "stylesheet": {
+      "getproperty": "b"
+    }
+  },
+  "getindexvar array": {
+    "input": {
+      "i": 1,
+      "t": ["a","b","c"]
+    },
+    "stylesheet": {
+      "getIndexVar": ["t", "i"]
+    }
+  },
+  "getpropertyvar object": {
+    "input": {
+      "i" : "b",
+      "o" : { "a": 0, "b": 1, "c":2 },
+    },
+    "stylesheet": {
+      "getPropertyVar": ["o", "i"]
+    }
+  },
+  "array2object 1": {
+    "input": [
+      {
+        "_id": "2007",
+        "value": 538
+      }, {
+        "_id": "2008",
+        "value": 577
+      }, {
+        "_id": "2009",
+        "value": 611
+    }],
+    "stylesheet": {
+      "array2object": true
+    }
+  },
+  "array2object 2": {
+    "input": [
+      {
+        "key": "2007",
+        "val": 538
+      }, {
+        "key": "2008",
+        "val": 577
+      }, {
+        "key": "2009",
+        "val": 611
+    }],
+    "stylesheet": {
+      "array2object": ["key","val"]
+    }
+  },
+  "arrays2objects 1": {
+    "input": [ [ "Afghanistan", "AFG" ],
+               [ "Aland Islands", "ALA" ] ],
+    "stylesheet": {
+      "arrays2objects": true
+    }
+  },
+  "arrays2objects 2": {
+    "input": [ [ "Afghanistan", "AFG" ],
+               [ "Aland Islands", "ALA" ] ],
+    "stylesheet": {
+      "arrays2objects": ["key","val"]
+    }
+  },
+  "zip": {
+    "input": {
+      "array1": [{"_id": "1", "value": 1},  {"_id": "2", "value": 2}],
+      "array2": [{"_id": "1", "value": 10}, {"_id": "2", "value": 20}]
+    },
+    "stylesheet": {
+      "zip": ["array1","array2"]
+    }
+  },
+  "coalesce": {
+    "input": {
+      "a" : {
+        "b" : {
+          "c" : "value"
+        },
+        "d" : null
+      }
+    },
+    "stylesheet": {
+      "find" : ["x", "x.y", "a.b.c"],
+      "coalesce" : true
+    }
+  },
+  "order": {
+    "input": {
+      "a" : {
+        "b" : {
+          "c" : "value"
+        },
+        "d" : null
+      }
+    },
+    "stylesheet": {
+      "$x.y" : {
+        "find" : ["x.y", "a.b.c"],
+        "coalesce" : true,
+        "upcase" : true
+      },
+      "$x.z" : {
+        "find" : ["x.y", "a.b.c"],
+        "first" : true
+      }
+    }
+  },
+  "substring month": {
+    "input": "20150310",
+    "stylesheet": {
+      "substring": [4,2]
+    }
+  },
+  "substring day": {
+    "input": "20150310",
+    "stylesheet": {
+      "substring": [-2]
+    }
+  }
+}
