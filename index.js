@@ -118,14 +118,13 @@ module.exports = function(exec, execmap) {
         if (!Array.isArray(arg)) {
           arg = ["_id","value"];
         }
-        assert(arg.length === 2);
-        var key = arg[0];
-        var value = arg[1];
+        assert(arg.length >= 2);
         obj = obj.map(function (item) {
-            var o = {};
-            o[key] = item[0];
-            o[value] = item[1];
-            return o;
+          var o = {};
+          arg.forEach(function(val,index){
+            o[val] = item[index];
+          });
+          return o;
         });
         return obj;
     }, "arrays2objects");
