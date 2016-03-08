@@ -147,7 +147,7 @@ var stylesheet = {
 <a id="arrays2objects"></a>
 ### arrays2objects: [key, value]
 
-Convert an array of arrays (of 2 items), to an array of objects, where the first key if `key` and the second `value`). Defailt value of `key`: `_id`, default value of `value`: `value`.
+Convert an array of arrays (of 2+ items), to an array of objects, where the first key if `key` and the second `value`). Default value of `key`: `_id`, default value of `value`: `value`.
 
 > *Note*: this is useful to prepare data from a CSV file to be treated with `array2object`.
 
@@ -157,10 +157,18 @@ Ex:
 var stylesheet = {
   "set": [ [ "Afghanistan", "AFG" ],
            [ "Aland Islands", "ALA" ] ],
-  "arrays2objects": ["key", "val"]
+  "arrays2objects": true
 };
 // output: [ { "key": "Afghanistan", "val": "AFG"},
 //           { "key": "Aland Islands", "val": "ALA"} ]
+
+var stylesheet_2 = {
+  "set": [ [ "Pierre", "23", "Paris", "France", "75000" ],
+           [ "Marie", "29", "Lons", "France", "39000" ] ],
+  "arrays2objects": ["name", "age", "town", "country", "cp"]
+};
+// output: [ { "nom": "Pierre", "age": "23", "ville": "Paris", "pays": "France", "cp": "75000"},
+//           { "nom": "Marie", "age": "29", "ville": "Lons", "pays": "France", "cp": "39000"} ]
 ```
 
 ```javascript

@@ -116,10 +116,10 @@
     }
   },
   "arrays2objects 2": {
-    "input": [ [ "Afghanistan", "AFG" ],
-               [ "Aland Islands", "ALA" ] ],
+    "input": [ [ "Pierre", "23", "Paris", "France", "75000" ],
+               [ "Marie", "29", "Lons", "France", "39000" ] ],
     "stylesheet": {
-      "arrays2objects": ["key","val"]
+      "arrays2objects": ["name", "age", "town", "country", "cp"]
     }
   },
   "zip": {
