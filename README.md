@@ -157,7 +157,7 @@ Ex:
 var stylesheet = {
   "set": [ [ "Afghanistan", "AFG" ],
            [ "Aland Islands", "ALA" ] ],
-  "arrays2objects": true
+  "arrays2objects": ["key", "val"]
 };
 // output: [ { "key": "Afghanistan", "val": "AFG"},
 //           { "key": "Aland Islands", "val": "ALA"} ]

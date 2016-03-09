@@ -221,6 +221,27 @@ describe('asynchronous basic', function (done) {
 
   it('array #15', function (done) {
     var stylesheet = {
+      "set": [ [ "Pierre", "23", "Paris", "France", "75000" ],
+               [ "Marie", "29", "Lons", "France", "39000" ] ],
+      "arrays2objects": ["name", "age", "town", "country", "cp"]
+    };
+    JBJ.render(stylesheet, function (err, output) {
+      assert.equal(output[0].name, "Pierre");
+      assert.equal(output[0].age, "23");
+      assert.equal(output[0].town, "Paris");
+      assert.equal(output[0].country, "France");
+      assert.equal(output[0].cp, "75000");
+      assert.equal(output[1].name, "Marie");
+      assert.equal(output[1].age, "29");
+      assert.equal(output[1].town, "Lons");
+      assert.equal(output[1].country, "France");
+      assert.equal(output[1].cp, "39000");
+      done(err);
+    });
+  });
+
+  it('array #16', function (done) {
+    var stylesheet = {
       "set": {
         "array1": [{"_id": "1", "value": 1},  {"_id": "2", "value": 2}],
         "array2": [{"_id": "1", "value": 10}, {"_id": "2", "value": 20}]
@@ -238,7 +259,7 @@ describe('asynchronous basic', function (done) {
     });
   });
 
-  it('array #16', function(done) {
+  it('array #17', function(done) {
     var stylesheet = {
       "find" : ["x", "x.y", "a.b.c"],
       "coalesce" : null
@@ -249,7 +270,7 @@ describe('asynchronous basic', function (done) {
     });
   });
 
-  it('array #17', function(done) {
+  it('array #18', function(done) {
     var stylesheet = {
       "$x.y" : {
         "find" : ["x.y", "a.b.c"],

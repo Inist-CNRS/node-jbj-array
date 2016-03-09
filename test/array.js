@@ -237,7 +237,7 @@ describe('array', function () {
     assert.equal(output, 'value');
   });
 
-  it('array #17', function() {
+  it('array #18', function() {
     var stylesheet = {
       "$x.y" : {
         "find" : ["x.y", "a.b.c"],
