@@ -46,19 +46,19 @@
       "mappingVar": ["input","arg"]
     }
   },
-  "getindex array": {
+  "getIndex array": {
     "input": [ "a", "b", "c"],
     "stylesheet": {
-      "getindex" : 2
+      "getIndex" : 2
     }
   },
-  "getproperty object": {
+  "getProperty object": {
     "input": { "a": 0, "b": 1, "c":2 },
     "stylesheet": {
-      "getproperty": "b"
+      "getProperty": "b"
     }
   },
-  "getindexvar array": {
+  "getIndexVar array": {
     "input": {
       "i": 1,
       "t": ["a","b","c"]
@@ -67,7 +67,7 @@
       "getIndexVar": ["t", "i"]
     }
   },
-  "getpropertyvar object": {
+  "getPropertyVar object": {
     "input": {
       "i" : "b",
       "o" : { "a": 0, "b": 1, "c":2 }
@@ -141,7 +141,7 @@
       }
     },
     "stylesheet": {
-      "find" : ["x", "x.y", "a.b.c"],
+      "get" : ["x", "x.y", "a.b.c"],
       "coalesce" : true
     }
   },
@@ -156,12 +156,12 @@
     },
     "stylesheet": {
       "$x.y" : {
-        "find" : ["x.y", "a.b.c"],
+        "get" : ["x.y", "a.b.c"],
         "coalesce" : true,
         "upcase" : true
       },
       "$x.z" : {
-        "find" : ["x.y", "a.b.c"],
+        "get" : ["x.y", "a.b.c"],
         "first" : true
       }
     }

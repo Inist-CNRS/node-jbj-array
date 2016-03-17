@@ -147,6 +147,8 @@ var stylesheet = {
 <a id="arrays2objects"></a>
 ### arrays2objects: [key, value]
 
+*alias*: arrayOfArrays2arrayOfObjects
+
 Convert an array of arrays (of 2+ items), to an array of objects, where the first key if `key` and the second `value`). Default value of `key`: `_id`, default value of `value`: `value`.
 
 > *Note*: this is useful to prepare data from a CSV file to be treated with `array2object`.
@@ -226,9 +228,11 @@ Get the first non-undefined value
 ```
 
 <a id="getproperty"></a>
+<a id="getProperty"></a>
 <a id="getindex"></a>
-### getindex: property | index
-*aliases : getProperty, getproperty, getIndex*
+<a id="getIndex"></a>
+### getIndex: property | index
+*aliases : getProperty, getproperty, getindex*
 
 Get a property of an object, or an item of an array.
 
@@ -240,15 +244,17 @@ var stylesheet = {
 // output : "c"
 var stylesheet = {
   "set"        : { "a": 0, "b": 1, "c":2 },
-  "getproperty": "b"
+  "getProperty": "b"
 };
 // output : 1
 ```
 
 <a id="getpropertyvar"></a>
+<a id="getPropertyVar"></a>
 <a id="getindexvar"></a>
-### getindexvar: [ arrayName | objectName , propertyName | indexName ]
-*aliases : getPropertyVar, getpropertyvar, getIndexVar*
+<a id="getIndexVar"></a>
+### getIndexVar: [ arrayName | objectName , propertyName | indexName ]
+*aliases : getPropertyVar, getpropertyvar, getindexvar*
 
 Get a property of an object, or an item of an array, like [getindex](#getindex), but using variables.
 
